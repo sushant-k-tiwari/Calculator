@@ -6,6 +6,10 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import java.math.BigDecimal
+
+import kotlin.math.roundToInt
+import java.math.RoundingMode
 
 class MainActivity : AppCompatActivity() {
 
@@ -38,9 +42,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun  onOperator(view: View){
-        tvInput?.text?.let{
-            if (lastNumeric && !isOperatorAdded(it.toString())){
+    fun onOperator(view: View) {
+        tvInput?.text?.let {
+            if (lastNumeric && !isOperatorAdded(it.toString())) {
                 tvInput?.append((view as Button).text)
                 lastDot = false
                 lastNumeric = false
@@ -49,24 +53,23 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun isOperatorAdded(value: String) : Boolean{
-        return if(value.startsWith("-")){
+    private fun isOperatorAdded(value: String): Boolean {
+        return if (value.startsWith("-")) {
             false
-        }
-        else{
+        } else {
             value.contains("/") || value.contains("*") || value.contains("+")
                     || value.contains("-")
         }
     }
 
-    fun onEqual(view: View){
-        if(lastNumeric){
+    fun onEqual(view: View) {
+        if (lastNumeric) {
             var tvValue = tvInput?.text.toString()
             var prefix = ""
             try {
-                if (tvValue.startsWith("-")){
-                    prefix ="-"
-                    tvValue = tvValue.substring(1   )
+                if (tvValue.startsWith("-")) {
+                    prefix = "-"
+                    tvValue = tvValue.substring(1)
                 }
                 if (tvValue.contains("-")) {
                     val splitValue = tvValue.split("-")
@@ -79,8 +82,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     var result = one.toDouble() - two.toDouble()
                     tvInput?.text = removeZeroAfterDot(result.toString())
-                }
-                else  if (tvValue.contains("+")) {
+                } else if (tvValue.contains("+")) {
                     val splitValue = tvValue.split("+")
 
                     var one = splitValue[0]
@@ -91,8 +93,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     var result = one.toDouble() + two.toDouble()
                     tvInput?.text = removeZeroAfterDot(result.toString())
-                }
-                else  if (tvValue.contains("*")) {
+                } else if (tvValue.contains("*")) {
                     val splitValue = tvValue.split("*")
 
                     var one = splitValue[0]
@@ -103,8 +104,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     var result = one.toDouble() * two.toDouble()
                     tvInput?.text = removeZeroAfterDot(result.toString())
-                }
-                else  if (tvValue.contains("/")) {
+                } else if (tvValue.contains("/")) {
                     val splitValue = tvValue.split("/")
 
                     var one = splitValue[0]
@@ -117,16 +117,19 @@ class MainActivity : AppCompatActivity() {
                     tvInput?.text = removeZeroAfterDot(result.toString())
                 }
 
-            }catch (e: java.lang.ArithmeticException){
+            } catch (e: java.lang.ArithmeticException) {
                 e.printStackTrace()
             }
         }
     }
 
-    private fun removeZeroAfterDot(result: String) : String{
-        var value = result
-        if (result.contains(".0"))
-            value = result.substring(0, result.length - 2)
+    private fun removeZeroAfterDot(result: String): String {
+        lateinit var value: String
+        var bd = BigDecimal(result)
+        val roundOff: String = bd.setScale(5, RoundingMode.FLOOR).toString()
+        value = roundOff
+        if (roundOff.contains(".0"))
+            value = roundOff.substring(0, roundOff.length - 6)
         return value
     }
 }
