@@ -6,15 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical">
-
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
     <TextView
         android:id="@+id/tvInput"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:background="#efefef"
+        android:background="?attr/colorPrimaryContainer"
         android:padding="5dp"
         android:textSize="48sp"
-        android:textColor="@color/elseUse"
+        android:textColor="?attr/colorPrimary"
         android:gravity="end|bottom"
         />
 
@@ -22,6 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:background="?attr/colorPrimaryContainer"
         android:layout_weight="1"
         >
         <Button
@@ -33,7 +38,6 @@
             android:layout_weight="1"
             android:text="@string/btn7"
             android:textSize="20sp"
-            android:background="@drawable/round_btn"
 
             />
 <Button
@@ -45,7 +49,6 @@
             android:layout_weight="1"
             android:text="@string/btn8"
             android:textSize="20sp"
-            android:background="@drawable/round_btn"
             />
 <Button
             android:onClick="onDigit"
@@ -56,7 +59,6 @@
             android:layout_weight="1"
             android:text="@string/btn9"
             android:textSize="20sp"
-            android:background="@drawable/round_btn"
             />
 <Button
             android:onClick="onOperator"
@@ -67,7 +69,6 @@
             android:layout_weight="1"
             android:text="@string/btnDiv"
             android:textSize="20sp"
-            android:background="@drawable/round_btn"
             />
 
 
@@ -76,6 +77,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:background="?attr/colorPrimaryContainer"
         android:layout_weight="1"
         >
         <Button
@@ -87,7 +89,6 @@
             android:layout_weight="1"
             android:text="@string/btn4"
             android:textSize="20sp"
-            android:background="@drawable/round_btn"
 
             />
 <Button
@@ -99,7 +100,7 @@
             android:layout_weight="1"
             android:text="@string/btn5"
             android:textSize="20sp"
-            android:background="@drawable/round_btn"
+
             />
 <Button
             android:onClick="onDigit"
@@ -110,7 +111,6 @@
             android:layout_weight="1"
             android:text="@string/btn6"
             android:textSize="20sp"
-            android:background="@drawable/round_btn"
             />
 <Button
             android:onClick="onOperator"
@@ -121,7 +121,7 @@
             android:layout_weight="1"
             android:text="@string/btnMul"
             android:textSize="20sp"
-            android:background="@drawable/round_btn"
+
             />
 
 
@@ -131,6 +131,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_weight="1"
+        android:background="?attr/colorPrimaryContainer"
         >
         <Button
             android:onClick="onDigit"
@@ -141,7 +142,6 @@
             android:layout_weight="1"
             android:text="@string/btn1"
             android:textSize="20sp"
-            android:background="@drawable/round_btn"
 
             />
 <Button
@@ -153,7 +153,7 @@
             android:layout_weight="1"
             android:text="@string/btn2"
             android:textSize="20sp"
-            android:background="@drawable/round_btn"
+
             />
 <Button
             android:onClick="onDigit"
@@ -164,7 +164,7 @@
             android:layout_weight="1"
             android:text="@string/btn3"
             android:textSize="20sp"
-            android:background="@drawable/round_btn"
+
             />
 <Button
             android:onClick="onOperator"
@@ -175,7 +175,7 @@
             android:layout_weight="1"
             android:text="@string/btnSub"
             android:textSize="20sp"
-            android:background="@drawable/round_btn"
+
             />
 
 
@@ -184,6 +184,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:background="?attr/colorPrimaryContainer"
         android:layout_weight="1"
         >
 
@@ -198,7 +199,6 @@
             android:layout_weight="1"
             android:text="@string/btn0"
             android:textSize="20sp"
-            android:background="@drawable/round_btn"
             />
         <Button
             android:onClick="onDecimalPoint"
@@ -209,7 +209,6 @@
             android:layout_weight="1"
             android:text="."
             android:textSize="20sp"
-            android:background="@drawable/round_btn"
             />
 
         <Button
@@ -218,11 +217,10 @@
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
-            android:background="@drawable/round_btn"
             android:onClick="onClear"
             android:text="@string/btnCls"
             android:textSize="20sp"
-            android:textColor="@color/clsScreen"/>
+            android:textColor="#FF0E00"/>
 
         <Button
             android:onClick="onOperator"
@@ -233,7 +231,6 @@
             android:layout_weight="1"
             android:text="@string/btnAdd"
             android:textSize="20sp"
-            android:background="@drawable/round_btn"
             />
 
 
@@ -242,6 +239,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:background="?attr/colorPrimaryContainer"
         android:layout_weight="1"
         >
 
@@ -257,7 +255,6 @@
             android:layout_weight="1"
             android:text="@string/Equal"
             android:textSize="20sp"
-            android:background="@drawable/round_btn"
             />
 
 
