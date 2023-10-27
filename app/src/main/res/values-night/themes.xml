@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
         <style name="AppTheme" parent="Theme.Material3.Dark.NoActionBar">
             <item name="colorPrimary">@color/md_theme_dark_primary</item>
@@ -27,7 +27,7 @@
             <item name="colorSurfaceInverse">@color/md_theme_dark_inverseSurface</item>
             <item name="colorOnSurfaceInverse">@color/md_theme_dark_inverseOnSurface</item>
             <item name="colorPrimaryInverse">@color/md_theme_dark_inversePrimary</item>
-            <item name="android:fontFamily">@font/Caladea-Bold</item>
+            <item name="android:fontFamily">@font/caladea_bold</item>
         </style>
 
 
